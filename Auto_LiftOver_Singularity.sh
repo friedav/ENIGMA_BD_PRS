@@ -4,16 +4,16 @@
 
 ## Base Directory - this should be a parent directory that holds all project data
  # project data includes your genetic plink files + all downloaded files, software, and containers
-export Base_Dir=/home/fdavid_hpc
+export Base_Dir=/PATH/TO/BASE/DIR
 
 ## Path to project directory with all downloaded files
-export Project_Path=~/projects/ENIGMA_BD_PRS
+export Project_Path=/PATH/TO/DOWNLOADED/FOLDER/ENIGMA_BD_PRS
 
 ## Path to Your Samples PLINK Files
-export Sample_Dir=${Project_Path}/data_FOR2107/bestguess_final_checkedConsent_2023-02
+export Sample_Dir=/PATH/TO/GENETIC/DATA
 
 ## Plink Sample Prefix - the plink file prefix (filename before .bed, .fam, .bim suffix)
-export Prefix=FOR2107_all_geno_remove_final.checkedConsent
+export Prefix=YOUR_PLINK_FILES_PREFIX
 
 ## Path to liftover chain file
 # we provide build hg19/GRCh37 to hg39/GRCh38 - however you can provide the location to an alternative file
