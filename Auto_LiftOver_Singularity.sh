@@ -38,8 +38,13 @@ export plink2="singularity exec --home=$PWD:/home --bind ${Base_Dir} ${Project_P
 export plink1="singularity exec --home=$PWD:/home --bind ${Base_Dir} ${Project_Path}/ldpred2.sif plink"
 
 # Make Non-Duplicated SNP ID Plink files
+# (modification for FOR2107 data: exclude variants with missing rsIDs, as they
+# cause an "Error: Duplicate ID '.'." in the last step)
+echo "." > ${OUT_DIR}/exclude_vars_missing_rsID.txt
 ${plink2} --bfile ${Sample_Dir}/${Prefix} --rm-dup 'force-first' \
+        --exclude ${OUT_DIR}/exclude_vars_missing_rsID.txt \
         --make-bed --out ${OUT_DIR}/${Prefix}_noDup --threads ${NCORES} --memory ${MEMORY}
+rm ${OUT_DIR}/exclude_vars_missing_rsID.txt
 
 # Ensure chromosomes are renamed properly for liftover (chr1, ..., chrM etc.).
 bim_tmp="${OUT_DIR}/${Prefix}.lift.tmp"
