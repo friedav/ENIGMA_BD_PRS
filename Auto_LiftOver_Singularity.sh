@@ -4,16 +4,16 @@
 
 ## Base Directory - this should be a parent directory that holds all project data
  # project data includes your genetic plink files + all downloaded files, software, and containers
-export Base_Dir=/PATH/TO/BASE/DIR
+export Base_Dir=/lustre/scratch/data
 
 ## Path to project directory with all downloaded files
-export Project_Path=/PATH/TO/DOWNLOADED/FOLDER/ENIGMA_BD_PRS
+export Project_Path=${Base_Dir}/fdavid_hpc-ENIGMA_BD_PRS
 
 ## Path to Your Samples PLINK Files
-export Sample_Dir=/PATH/TO/GENETIC/DATA
+export Sample_Dir=${Project_Path}/data_FOR2107
 
 ## Plink Sample Prefix - the plink file prefix (filename before .bed, .fam, .bim suffix)
-export Prefix=YOUR_PLINK_FILES_PREFIX
+export Prefix=FOR2107_2019_2022_merged.HRC_imputed.dbSNP_rsIDs.MAF0.01_R20.3
 
 ## Path to liftover chain file
 # we provide build hg19/GRCh37 to hg39/GRCh38 - however you can provide the location to an alternative file
@@ -21,9 +21,9 @@ export liftover_chain=${Project_Path}/scripts/hg19ToHg38.over.chain.gz
 
 ## number of available cores for processing
 ##if submitting a slurm job you can comment this out
-export NCORES=8
+export NCORES=2
+export MEMORY=$((${NCORES} * 5800)) 	## orig = 4 cores with 7700 memory
 
-export MEMORY=$((${NCORES} * 7700)) 	## orig = 4 cores with 7700 memory
 
 ##################################################################################
 ############### END - Do Not Make Changes Beyond This Point ######################
