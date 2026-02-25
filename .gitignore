@@ -4,3 +4,5 @@ sumstats*/
 data_FOR2107/
 output*/
 liftover_tmp/
+.cache
+anc_proj_files/
