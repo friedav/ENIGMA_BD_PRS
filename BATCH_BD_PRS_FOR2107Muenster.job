@@ -1,0 +1,9 @@
+#!/bin/bash
+#SBATCH --job-name=ENIGMA_FOR_Muenster
+#SBATCH -p intelsr_medium
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=8000M
+#SBATCH --time=12:00:00
+#SBATCH --account=ag_ukb_ihg_forstner
+
+bash Singularity_RUN_ENIGMA_BD_PRS_FOR2107Muenster.sh
