@@ -1,10 +1,12 @@
 .Rproj.user/
 *.Rproj
+.Rhistory
 ldpred2.sif
 ref/
 sumstats*/
 data_FOR2107/
 output*/
+*.zip
 liftover_tmp/
 .cache
 anc_proj_files/
