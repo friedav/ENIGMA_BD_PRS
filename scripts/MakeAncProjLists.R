@@ -40,7 +40,7 @@ setwd(paste0(projectdir, "/", outdir))
 
 anc_proj <- fread(paste0(ancdir, "/pca_", samplename, "_proj.ancestries.txt"))
 # anc_proj <- fread("output_TOP/pca_TOP_proj.ancestries.txt")
-anc_proj <- anc_proj[,c(1:2, 25)]
+anc_proj <- anc_proj[,c(1:2, 26)]
 
 anc_proj %>% group_by(SuperPop) %>% 
   group_walk(
