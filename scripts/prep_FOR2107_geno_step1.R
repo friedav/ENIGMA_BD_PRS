@@ -30,6 +30,14 @@ fam <- fread(here(file.fam), data.table = FALSE,
 
 cov.mr <- read_xlsx(here("data_FOR2107/Covariates_MR.xlsx"))
 cov.ms <- read_xlsx(here("data_FOR2107/Covariates_MS.xlsx"))
+
+# # actual sample files sent by Lea which I overlooked in the email
+# sample.mr <- read_xlsx(here("data_FOR2107/sample_MR.xlsx"))
+# sample.ms <- read_xlsx(here("data_FOR2107/sample_MS.xlsx"))
+# all(cov.mr$SubjID == sample.mr$SubjID)
+# all(cov.ms$SubjID == sample.ms$SubjID)
+# # -> identical
+
 sample.all <- bind_rows(Marburg = cov.mr, Muenster = cov.ms, .id = "Site")
 
 with(sample.all, table(Dx, SubjID %in% fam$Proband, Site, useNA = "ifany"))
