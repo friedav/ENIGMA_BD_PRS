@@ -38,6 +38,15 @@ Marburg and the Münster subsample.
 
 TODO: Check in with Nadine Parker on this.
 
+Check of other site specific sumstats folders from figshare (in case of mixups):
+- Stockholm.zip: noSWEDEN
+- UMCU.zip:      noucl_nodutch
+- Munster.zip:   nobdtrs
+- Sydney.zip:    nobmau_noneuc
+- Marburg.zip:   nofor2107
+
+-> mixup unlikely - is there a second GWAS sample from Münster?
+
 
 ## Comparison of instructions to previous ENIGMA SCZ MRS project
 
@@ -136,9 +145,34 @@ Relevant outputs were created by the scripts at `output_FOR2107Marburg` and
 
 ### Modifications to the analysis scripts
 
-Within the FOR2107 Marburg sample, two samples were assigned to the Eastasian
+Within the FOR2107 Marburg sample, two samples were assigned to the East Asian
 (EAS) superpopulation. This lead to an error at the step of repeated call rate
 filtering, as for some reason both samples were removed. It does not seem to be 
 too useful to have this n=2 batch anyway, the Marburg script was modified in a
 way that the EAS part was omitted. 
 
+*Side note: It is surprising that there were any samples assigned to non-EUR
+superpopulation (2 EAS in FOR2107 Marburg, 1 EAS + 1 AMR in FOR2107 Münster) at
+all, since genotyping QC included a KING ancestry analysis with subsequent 
+removal of all non-EUR samples. Unclear whether ancestry estimation on (pruned) 
+imputed genotype data, the liftover to GRCh38, any variant filtering steps or 
+the version of reference data set has caused this. Going back to the FOR2107 
+Genotype QC intermediate files, especially after filtering for genetic outliers,
+demonstrated a rather homogeneous sample. 
+-> Decided to leave this as is.*
+
+
+## Sharing of outputs
+
+Both the `output_FOR2107Marburg` and `output_FOR2107Muenster` folder were 
+packaged together into `ENIGMA_BD_PRS.outputs_FOR2107.zip` and will be shared via a
+Sciebo link with Lea Teutenberg in Marburg.
+
+
+## Clean-up of project directory
+
+To reduce the storage footprint of this project, the following files/folders 
+were deleted:
+
+- `sumstats/` (not used for FOR2107 as LOO version was required, see above)
+- `sumstats_Munster/` (contained unrelated LOO sumstats)
