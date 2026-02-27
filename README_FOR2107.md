@@ -36,8 +36,6 @@ meant for a different cohort.
 Thus, `sumstats_Marburg` was renamed to `sumstats_FOR2107` and used for both the
 Marburg and the Münster subsample.
 
-TODO: Check in with Nadine Parker on this.
-
 Check of other site specific sumstats folders from figshare (in case of mixups):
 - Stockholm.zip: noSWEDEN
 - UMCU.zip:      noucl_nodutch
@@ -45,7 +43,9 @@ Check of other site specific sumstats folders from figshare (in case of mixups):
 - Sydney.zip:    nobmau_noneuc
 - Marburg.zip:   nofor2107
 
--> mixup unlikely - is there a second GWAS sample from Münster?
+-> BD_TRS is a different cohort from Münster (main PI Bernhard Baune), which is
+   also part of PGC BD; however, as confirmed by Udo Dannlowski, there is no
+   systematic relation between BD_TRS and FOR2107 Münster
 
 
 ## Comparison of instructions to previous ENIGMA SCZ MRS project
@@ -165,8 +165,8 @@ demonstrated a rather homogeneous sample.
 ## Sharing of outputs
 
 Both the `output_FOR2107Marburg` and `output_FOR2107Muenster` folder were 
-packaged together into `ENIGMA_BD_PRS.outputs_FOR2107.zip` and will be shared via a
-Sciebo link with Lea Teutenberg in Marburg.
+packaged together into `ENIGMA_BD_PRS.outputs_FOR2107.zip` and were shared via a
+Sciebo link with Lea Teutenberg in Marburg on 27.02.2026.
 
 
 ## Clean-up of project directory
